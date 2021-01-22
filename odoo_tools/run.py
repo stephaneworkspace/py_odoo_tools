@@ -23,16 +23,13 @@ class Connect:
         return self.uid
 
 class Model:
-    def __init__(self, connect, method, arr_params, map_params):
+    def __init__(self, connect, model):
         """ Model binding """
         self.connect = connect
-        self.method = method
-        self.arr_params = arr_params
-        self.map_params = map_params
         self.models = xmlrpc.client.ServerProxy('{}/xmlrpc/2/object',format(self.connect.host))
 
-    def execute_method(self):
+    def execute_method(self, method, arr_params, map_params):
         """ Execute mehod on the model """
         return self.models.execute_kw(self.connect.db, self.connect.uid, self.connect.password,
-            'res.partner', 'check_acces_rights',
+            model, method,
             ['read'], {'raise_exception': False})
