@@ -12,7 +12,7 @@ class Connect:
         self.username = username
         self.password = password
         self.common = xmlrpc.client.ServerProxy('{}/xmlrpc/2/common'.format(self.host))
-        self.uid = self.common.authenticate(self.db, self.username, self.password, self.host)
+        self.uid = self.common.authenticate(self.db, self.username, self.password, {})
 
     def get_version(self):
         """ Version of odoo """
@@ -31,5 +31,5 @@ class Model:
     def execute_method(self, method, arr_params, map_params):
         """ Execute mehod on the model """
         return self.models.execute_kw(self.connect.db, self.connect.uid, self.connect.password,
-            model, method,
+            self.model, method,
             ['read'], {'raise_exception': False})
