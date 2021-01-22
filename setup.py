@@ -8,13 +8,13 @@ setup(
     author_email='s.bressani@bluewin.ch',
     url='http://www.stephane-bressani.ch',
     long_description="README.txt",
-    
+
     # Sources
     packages = find_packages(),
     package_data = {
         'odoo_tools': [
             'resources/README.md',
-            'resources/clap/*'
+            'resources/clap/*',
         ],
     },
 
@@ -22,9 +22,9 @@ setup(
 #       "" : ["images/*.gif"]
 #   },
 #   data_files=[('images', ['images/hello.gif'])],
-    
+
     description="Odoo tool",
-    
+
     # Dependencies
     install_requires = ['clap==0.7'],
 )

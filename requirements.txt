@@ -1,1 +1,2 @@
 clap==0.7
+xmlrpclib==1.0.1
