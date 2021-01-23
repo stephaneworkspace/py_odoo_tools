@@ -27,7 +27,7 @@ class Model:
         """ Model binding """
         self.connect = connect
         self.model = model
-        self.models = xmlrpc.client.ServerProxy('{}/xmlrpc/2/object',format(self.connect.host))
+        self.models = xmlrpc.client.ServerProxy('{}/xmlrpc/2/object'.format(self.connect.host))
 
     def execute_method(self, method, arr_params, map_params):
         """ Execute mehod on the model """
