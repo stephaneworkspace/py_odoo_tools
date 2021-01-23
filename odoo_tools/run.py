@@ -32,5 +32,4 @@ class Model:
     def execute_method(self, method, arr_params, map_params):
         """ Execute mehod on the model """
         return self.models.execute_kw(self.connect.db, self.connect.uid, self.connect.password,
-            self.model, method,
-            ['read'], {'raise_exception': False})
+            self.model, method, arr_params, map_params)
